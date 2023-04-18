@@ -25,20 +25,20 @@ def ProductView(request):
         search=request.GET.get('title')
         if search!=None:
             productfinal=Product.objects.filter(title__icontains=search)
-    if request.method=="GET":
-        variant=request.GET.get('variant')
-        if variant!=None:
-            productfinal=Product.objects.filter(title=variant)
-    if request.method=="GET":
-        min=request.GET.get('price_from')
-        max=request.GET.get('price_to')
-        if variant!=None:
-            productfinal=ProductVariantPrice.objects.filter(price__range=(min, max))
+    # if request.method=="GET":
+    #     variant=request.GET.get('variant')
+    #     if variant!=None:
+    #         productfinal=Product.objects.filter(title=variant)
+    # if request.method=="GET":
+    #     min=request.GET.get('price_from')
+    #     max=request.GET.get('price_to')
+    #     if variant!=None:
+    #         productfinal=Product.objects.filter(price__range=(min, max))
 
-    if request.method=="GET":
-        date=request.GET.get('date')
-        if date!=None:
-            productfinal=Product.objects.filter(created_at=date)
+    # if request.method=="GET":
+    #     date=request.GET.get('date')
+    #     if date!=None:
+    #         productfinal=Product.objects.filter(created_at=date)
 
 
 
